@@ -19,16 +19,14 @@ import java.util.Arrays;
  */
 public class MoveZeroes_283 {
     /**
-     * 一遍遍历，记录待交换下标
+     * 时间复杂度 o（n）
+     * 空间复杂度 o（1）
+     * 一遍遍历，非0 交换
      * @param nums
      */
     public static void moveZeroes(int[] nums) {
         int changeIndex = 0;
-        int prev = nums[0];
-        for (int i = 1; i < nums.length; i++) {
-            if (nums[i] == 0 || nums[i] == prev) {
-
-            }
+        for (int i = 0; i < nums.length; i++) {
             if (nums[i] != 0) {
                 int temp = nums[changeIndex];
                 nums[changeIndex] = nums[i];
@@ -39,7 +37,7 @@ public class MoveZeroes_283 {
     }
 
     public static void main(String[] args) {
-        int[] arr = new int[]{1,0};
+        int[] arr = new int[]{0,1,0,3,12};
         moveZeroes(arr);
         System.out.println(Arrays.toString(arr));
     }
